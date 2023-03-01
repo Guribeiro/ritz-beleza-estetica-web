@@ -6,7 +6,7 @@ export const Container = styled.section`
   background-color: ${({ theme }) => theme.colors.bone};
 
   > article {
-    padding-top: 10rem;
+    padding: 10rem 0 5rem;
     width: 100%;
     max-width: 980px;
     margin: 2.4rem auto 0;

@@ -20,21 +20,28 @@ export const Container = styled.header`
     align-items: center;
     justify-content: space-between;
 
-    padding: 2.3rem 1.2rem;
+    padding: 1.8rem 1.2rem;
 
     border-bottom-width: 1px;
     border-bottom-color: ${({ theme }) => theme.colors.platinum};
     border-bottom-style: solid;
 
-    button {
+    > button {
       right: 0;
-      color: white;
-      border: none;
-      border-radius: 4px;
-      padding: 1rem 2rem;
-      font-size: 1.6rem;
+      color: ${({ theme }) => theme.colors.carrot_orange};
+      border-radius: 0.4rem;
+      padding: 1rem 3rem;
+      font-size: 1.4rem;
       position: relative;
-      cursor: pointer;
+      font-family: 'Italiana', serif;
+      background-color: transparent;
+      border: 1px solid ${({ theme }) => theme.colors.carrot_orange};
+      transition: 300ms;
+
+      &:hover {
+        background-color: ${({ theme }) => theme.colors.carrot_orange};
+        color: ${({ theme }) => theme.colors.background};
+      }
     }
 
     h3 {

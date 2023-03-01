@@ -13,15 +13,18 @@ const Header = (): JSX.Element => {
               <Link href="/">Sobre</Link>
             </li>
             <li>
-              <Link href="/">Serviços</Link>
+              <Link href="#services">Serviços</Link>
             </li>
             <li>
-              <Link href="/">Equipe</Link>
+              <Link href="#team">Equipe</Link>
+            </li>
+            <li>
+              <Link href="#location">Localização</Link>
             </li>
           </ul>
         </nav>
         <h3>RITZ</h3>
-        <a>entrar</a>
+        <button>entrar</button>
       </section>
     </Container>
   );

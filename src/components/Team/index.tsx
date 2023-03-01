@@ -11,7 +11,7 @@ import { Container } from './styles';
 
 const Team = (): JSX.Element => {
   return (
-    <Container>
+    <Container id="team">
       <article>
         <h2>Nossos profissionais especializados esperam por você</h2>
         <h3>NOSSA EQUIPE</h3>
