@@ -58,7 +58,6 @@ const Header = (): JSX.Element => {
           </ul>
         </nav>
         <h3>RITZ</h3>
-        <button>entrar</button>
       </section>
     </Container>
   );
