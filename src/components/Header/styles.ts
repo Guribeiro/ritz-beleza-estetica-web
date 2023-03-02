@@ -31,12 +31,13 @@ export const Container = styled.header`
       color: ${({ theme }) => theme.colors.carrot_orange};
       border-radius: 0.4rem;
       padding: 1rem 3rem;
-      font-size: 1.4rem;
+      font-size: 1rem;
       position: relative;
       font-family: 'Italiana', serif;
       background-color: transparent;
       border: 1px solid ${({ theme }) => theme.colors.carrot_orange};
       transition: 300ms;
+      text-transform: uppercase;
 
       &:hover {
         background-color: ${({ theme }) => theme.colors.carrot_orange};
