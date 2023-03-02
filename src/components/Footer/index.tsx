@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import AnchorLink from 'react-anchor-link-smooth-scroll';
 import {
   IconBrandFacebook,
   IconBrandInstagram,
@@ -37,9 +38,9 @@ const Footer = (): JSX.Element => {
           <p>📞 (11) 96865-7222</p>
           <div>
             <p>Ir para o topo</p>
-            <Link href="/">
+            <AnchorLink href="#welcome">
               <IconChevronUp />
-            </Link>
+            </AnchorLink>
           </div>
         </article>
       </section>
