@@ -32,7 +32,7 @@ export const Container = styled.section`
 
     .map-container {
       width: 980px;
-      height: 490px;
+      height: 390px;
     }
   }
 
