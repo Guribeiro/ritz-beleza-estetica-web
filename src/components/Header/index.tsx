@@ -1,6 +1,6 @@
-import { useScrollPosition } from '@/hooks/useScrollPosition';
-import Link from 'next/link';
 import { useEffect, useRef } from 'react';
+import AnchorLink from 'react-anchor-link-smooth-scroll';
+import { useScrollPosition } from '@/hooks/useScrollPosition';
 import { useTheme } from '@/hooks/theme';
 
 import { Container } from './styles';
@@ -14,7 +14,7 @@ const Header = (): JSX.Element => {
 
   useEffect(() => {
     if (headerRef.current) {
-      headerRef.current.style.transition = `300ms`;
+      headerRef.current.style.transition = `200ms`;
       headerRef.current.style.boxShadow =
         position > 0 ? `0 4px 30px rgba(0, 0, 0, 0.1)` : `none`;
     }
@@ -40,16 +40,20 @@ const Header = (): JSX.Element => {
         <nav>
           <ul>
             <li>
-              <Link href="/">Sobre</Link>
+              <AnchorLink href="#welcome">Sobre</AnchorLink>
             </li>
             <li>
-              <Link href="#services">Serviços</Link>
+              <AnchorLink offset={() => -50} href="#services">
+                Serviços
+              </AnchorLink>
             </li>
             <li>
-              <Link href="#team">Equipe</Link>
+              <AnchorLink offset={() => -50} href="#team">
+                Equipe
+              </AnchorLink>
             </li>
             <li>
-              <Link href="#location">Localização</Link>
+              <AnchorLink href="#location">Localização</AnchorLink>
             </li>
           </ul>
         </nav>
