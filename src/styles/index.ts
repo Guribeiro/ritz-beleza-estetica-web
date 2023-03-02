@@ -1,5 +1,5 @@
-import { lighten, darken } from 'polished';
-import styled, { css } from 'styled-components';
+import { darken } from 'polished';
+import styled from 'styled-components';
 
 export const Main = styled.main`
   max-width: 1120px;

@@ -11,7 +11,7 @@ import { dark, DarkThemeType } from '@/styles/themes/dark';
 import { light, LightThemeType } from '@/styles/themes/light';
 import { ThemeProvider as StyledThemeProvider } from 'styled-components';
 
-type Theme = DarkThemeType | LightThemeType;
+export type Theme = DarkThemeType | LightThemeType;
 
 interface ThemeContextData {
   toggleTheme(): void;
