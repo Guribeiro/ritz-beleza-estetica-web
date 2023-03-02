@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { jumping } from '@/styles/animations';
 
 export const Container = styled.footer`
   width: 100%;
@@ -74,6 +75,14 @@ export const Container = styled.footer`
         align-items: center;
         justify-content: space-between;
         width: 70%;
+
+        > a {
+          &:hover {
+            svg {
+              animation: ${jumping} 300ms linear alternate infinite;
+            }
+          }
+        }
       }
     }
   }

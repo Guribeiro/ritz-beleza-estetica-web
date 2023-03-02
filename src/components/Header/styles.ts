@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { darken } from 'polished';
+import { pulse } from '@/styles/animations';
 
 export const Container = styled.header`
   width: 100%;
@@ -7,7 +8,6 @@ export const Container = styled.header`
   position: fixed;
 
   background: rgba(241, 241, 241, 0.22);
-  /* box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); */
   backdrop-filter: blur(5.9px);
   -webkit-backdrop-filter: blur(5.9px);
 
@@ -42,6 +42,7 @@ export const Container = styled.header`
       &:hover {
         background-color: ${({ theme }) => theme.colors.carrot_orange};
         color: ${({ theme }) => theme.colors.background};
+        animation: ${pulse} 2s infinite;
       }
     }
 

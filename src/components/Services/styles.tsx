@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { pulse } from '@/styles/animations';
 
 export const Container = styled.section`
   min-height: 100vh;
@@ -29,7 +30,6 @@ export const Container = styled.section`
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
-
       position: relative;
       & > * {
         margin: 2rem 0;
@@ -53,6 +53,8 @@ export const Container = styled.section`
         transition: 300ms;
 
         &:hover {
+          animation: ${pulse} 2s infinite;
+
           > a > span {
             &::after {
               width: 100%;
