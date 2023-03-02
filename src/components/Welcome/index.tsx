@@ -8,7 +8,7 @@ import backgroundImage from '@/assets/ritz-home-background.png';
 
 const Welcome = (): JSX.Element => {
   return (
-    <Container>
+    <Container id="welcome">
       <article>
         <aside>
           <section>
