@@ -10,14 +10,16 @@ const Welcome = (): JSX.Element => {
   return (
     <Container id="welcome">
       <article>
-        <h3>
-          Melhoramos o seu dia através da sua <br />
-          <span>autoestima</span>
-        </h3>
-        <p>
-          Temos tudo o que você precisa para se sentir bem e feliz com a sua
-          aparência.
-        </p>
+        <div>
+          <h3>
+            Melhoramos o seu dia através da sua <br />
+            <span>autoestima</span>
+          </h3>
+          <p>
+            Temos tudo o que você precisa para se sentir bem e feliz com a sua
+            aparência.
+          </p>
+        </div>
 
         <ul>
           <li>

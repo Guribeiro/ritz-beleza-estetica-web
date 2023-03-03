@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { pulse } from '@/styles/animations';
 
 export const Container = styled.section`
-  min-height: 100vh;
+  height: 100vh;
   display: flex;
 
   > a {
@@ -30,23 +30,29 @@ export const Container = styled.section`
 
   > article {
     width: 100%;
+    display: flex;
+    flex-direction: column;
+
+    justify-content: space-between;
     margin: 4.4rem auto 0;
-    padding: 4rem 2.3rem 2.25rem;
+    padding: 6rem 2.3rem 0;
 
     text-align: center;
 
-    h3 {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.625rem;
+    > div {
+      > h3 {
+        font-family: 'Playfair Display', serif;
+        font-size: 2.625rem;
 
-      > span {
-        color: ${({ theme }) => theme.colors.primary};
+        > span {
+          color: ${({ theme }) => theme.colors.primary};
+        }
       }
-    }
 
-    > p {
-      margin-top: 1.6rem;
-      font-size: 1.2rem;
+      > p {
+        margin-top: 1.6rem;
+        font-size: 1.2rem;
+      }
     }
 
     > ul {
@@ -79,15 +85,11 @@ export const Container = styled.section`
       display: flex;
       align-items: center;
       justify-content: center;
-      position: absolute;
-      bottom: 0;
-      left: 50%;
-      transform: translate(-50%);
 
       img {
         margin: 0 auto;
-        width: 27.125rem;
-        height: 28.125rem;
+        width: 34.125rem;
+        height: 35.125rem;
         transition: 300ms;
 
         @media (min-width: 680px) {
