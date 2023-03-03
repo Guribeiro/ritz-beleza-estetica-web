@@ -17,6 +17,16 @@ export const Container = styled.footer`
 
     padding: 13rem 1.2rem 10rem;
 
+    @media (max-width: 440px) {
+      flex-direction: column;
+
+      > article {
+        & + article {
+          margin-top: 2rem;
+        }
+      }
+    }
+
     > article {
       width: 20rem;
 

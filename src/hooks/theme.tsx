@@ -7,14 +7,12 @@ import {
   useEffect,
 } from 'react';
 
-import { dark, DarkThemeType } from '@/styles/themes/dark';
 import { light, LightThemeType } from '@/styles/themes/light';
 import { ThemeProvider as StyledThemeProvider } from 'styled-components';
 
-export type Theme = DarkThemeType | LightThemeType;
+export type Theme = LightThemeType;
 
 interface ThemeContextData {
-  toggleTheme(): void;
   changeMainColor(color: string): void;
   theme: Theme;
 }
@@ -39,26 +37,6 @@ const ThemeProvider = ({ children }: Props): JSX.Element => {
     [theme],
   );
 
-  const toggleTheme = useCallback(() => {
-    const themePersisted = localStorage.getItem(`guribeiro-dev/theme`);
-
-    if (themePersisted) {
-      const themeClone = structuredClone(JSON.parse(themePersisted));
-
-      const { primary } = themeClone.colors;
-
-      const selectedTheme = theme.title === `light` ? dark : light;
-
-      selectedTheme.colors.primary = primary;
-
-      setTheme(selectedTheme);
-
-      return;
-    }
-
-    setTheme(theme.title === `light` ? dark : light);
-  }, [theme]);
-
   useEffect(() => {
     const loadPersistentTheme = () => {
       const themePersisted = localStorage.getItem(`guribeiro-dev/theme`);
@@ -74,7 +52,7 @@ const ThemeProvider = ({ children }: Props): JSX.Element => {
   }, [theme]);
 
   return (
-    <ThemeContext.Provider value={{ toggleTheme, changeMainColor, theme }}>
+    <ThemeContext.Provider value={{ changeMainColor, theme }}>
       <StyledThemeProvider theme={theme}>{children}</StyledThemeProvider>
     </ThemeContext.Provider>
   );

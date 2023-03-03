@@ -1,21 +1,17 @@
-import Header from '@/components/Header';
-import Welcome from '@/components/Welcome';
-import Services from '@/components/Services';
-import Team from '@/components/Team';
-import Location from '@/components/Location';
-import Footer from '@/components/Footer';
-
-import { Main } from '@/styles/home';
+import Web from '@/components/web';
+import Mobile from '@/components/mobile';
+import { useEffect, useState } from 'react';
 
 export default function Home() {
-  return (
-    <Main>
-      <Header />
-      <Welcome />
-      <Services />
-      <Team />
-      <Location />
-      <Footer />
-    </Main>
-  );
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const userAgent = navigator.userAgent.toLowerCase();
+    const mobileKeywords = [`iphone`, `android`, `windows phone`];
+    const isMobileDevice = mobileKeywords.some((keyword) =>
+      userAgent.includes(keyword),
+    );
+    setIsMobile(isMobileDevice);
+  }, []);
+  return isMobile ? <Mobile /> : <Web />;
 }

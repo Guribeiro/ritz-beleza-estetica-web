@@ -105,17 +105,17 @@ const GlobalStyleComponent = (): JSX.Element => {
 
   /* Track */
   ::-webkit-scrollbar-track {
-    background: #151417;
+    background: ${theme.colors.bone};
   }
 
   /* Handle */
   ::-webkit-scrollbar-thumb {
-    background: ${lighten(0.1, `${`#1b1b1b`}`)};
+    background: ${theme.colors.anti_flash};
   }
 
   /* Handle on hover */
   ::-webkit-scrollbar-thumb:hover {
-    background: #222222;
+    background: ${theme.colors.platinum};
   }
 `;
   return <GlobalStyle />;
