@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { darken } from 'polished';
+import { pulse } from '@/styles/animations';
 
 export const Container = styled.section`
   min-height: 100vh;
@@ -58,7 +59,9 @@ export const Container = styled.section`
             align-items: center;
             background-color: ${({ theme }) => theme.colors.carrot_orange};
             color: ${({ theme }) => theme.colors.anti_flash};
+
             transition: 300ms;
+            animation: ${pulse} 2s infinite;
 
             &:hover {
               background-color: ${({ theme }) =>
@@ -103,6 +106,11 @@ export const Container = styled.section`
 
             font-size: 1rem;
             color: ${({ theme }) => theme.colors.silver};
+            transition: 300ms;
+
+            &:hover {
+              color: ${({ theme }) => theme.colors.carrot_orange};
+            }
 
             &::before {
               content: '';

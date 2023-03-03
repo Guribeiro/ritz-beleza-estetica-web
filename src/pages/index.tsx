@@ -7,6 +7,7 @@ export default function Home() {
 
   useEffect(() => {
     const userAgent = navigator.userAgent.toLowerCase();
+
     const mobileKeywords = [`iphone`, `android`, `windows phone`];
     const isMobileDevice = mobileKeywords.some((keyword) =>
       userAgent.includes(keyword),

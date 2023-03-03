@@ -17,17 +17,26 @@ const Footer = (): JSX.Element => {
 
           <ul>
             <li>
-              <Link href="/">
+              <Link
+                href="https://www.facebook.com/salaoritzbeleza"
+                target="_blank"
+              >
                 <IconBrandFacebook className="facebook" />
               </Link>
             </li>
             <li>
-              <Link href="/">
+              <Link
+                href="https://www.instagram.com/ritz.aruja/?hl=pt-br"
+                target="_blank"
+              >
                 <IconBrandInstagram className="instagram" />
               </Link>
             </li>
             <li>
-              <Link href="/">
+              <Link
+                href="https://wa.me/5511968657222?text=Ol%C3%A1%2C+eu+gostaria+agendar+um+hor%C3%A1rio"
+                target="_blank"
+              >
                 <IconBrandWhatsapp className="whatsapp" />
               </Link>
             </li>
