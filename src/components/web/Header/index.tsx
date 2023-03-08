@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
+import Link from 'next/link';
 import { useScrollPosition } from '@/hooks/useScrollPosition';
 import { useTheme } from '@/hooks/theme';
 
@@ -58,6 +59,7 @@ const Header = (): JSX.Element => {
           </ul>
         </nav>
         <h3>RITZ</h3>
+        <Link href="/signin">Entrar</Link>
       </section>
     </Container>
   );

@@ -17,6 +17,7 @@ declare module 'styled-components' {
       ghost_white: string;
       platinum: string;
       bone: string;
+      red: string;
     };
   }
 }

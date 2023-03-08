@@ -14,6 +14,7 @@ export const light = {
     ghost_white: `#F8F8FF`,
     platinum: `#E1E1E1`,
     bone: `#F0EBE4`,
+    red: `#eb4d4b`,
   },
 };
 

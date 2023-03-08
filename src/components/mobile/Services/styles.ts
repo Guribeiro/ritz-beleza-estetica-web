@@ -2,7 +2,6 @@ import styled from 'styled-components';
 import { pulse } from '@/styles/animations';
 
 export const Container = styled.section`
-  min-height: 100vh;
   display: flex;
   background-color: ${({ theme }) => theme.colors.bone};
 
@@ -35,10 +34,6 @@ export const Container = styled.section`
       scrollbar-width: thin;
       -ms-overflow-style: none;
       padding-right: 2.3rem;
-
-      &:last-child {
-        border: 1px solid red;
-      }
 
       > img {
         width: 32.8rem;

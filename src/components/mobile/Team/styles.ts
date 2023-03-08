@@ -2,7 +2,6 @@ import styled from 'styled-components';
 import { pulse } from '@/styles/animations';
 
 export const Container = styled.section`
-  min-height: 100vh;
   display: flex;
   background-color: ${({ theme }) => theme.colors.anti_flash};
 

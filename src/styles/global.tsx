@@ -1,5 +1,4 @@
 import { useTheme } from '@/hooks/theme';
-import { lighten } from 'polished';
 import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyleComponent = (): JSX.Element => {
@@ -36,6 +35,8 @@ const GlobalStyleComponent = (): JSX.Element => {
   button{
     background-color: transparent;
     border: 0;
+    font-size: 1.6rem;
+    font-family: 'Playfair Display', serif;
   }
   body, input, button, select, option{
     font: 400 1rem 'Playfair Display', serif;
@@ -73,7 +74,7 @@ const GlobalStyleComponent = (): JSX.Element => {
     cursor: not-allowed;
   }
   .react-modal-overlay {
-    background-color: #00000050;
+    background-color: ${theme.colors.night};
     position: fixed;
     top: 0;
     bottom: 0;
@@ -86,7 +87,7 @@ const GlobalStyleComponent = (): JSX.Element => {
   .react-modal-content{
     width: 100%;
     max-width: 1160px;
-    background-color: #F0F0F0;
+    background-color: ${theme.colors.anti_flash};
     padding: 5rem 3rem;
     position: relative;
     border-radius: 5px;

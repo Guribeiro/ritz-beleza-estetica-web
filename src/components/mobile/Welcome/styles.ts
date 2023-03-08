@@ -35,7 +35,7 @@ export const Container = styled.section`
 
     justify-content: space-between;
     margin: 4.4rem auto 0;
-    padding: 6rem 2.3rem 0;
+    padding: 4.4rem 2.3rem 0;
 
     text-align: center;
 
@@ -53,30 +53,30 @@ export const Container = styled.section`
         margin-top: 1.6rem;
         font-size: 1.2rem;
       }
-    }
 
-    > ul {
-      margin-top: 2rem;
-      padding: 1.2rem 0;
-      list-style: none;
+      > ul {
+        margin-top: 2rem;
+        padding: 1.2rem 0;
+        list-style: none;
 
-      > li {
-        display: flex;
-        align-items: center;
-        justify-content: baseline;
+        > li {
+          display: flex;
+          align-items: center;
+          justify-content: baseline;
 
-        padding: 0.4rem;
+          padding: 0.4rem;
 
-        font-size: 1rem;
-        color: ${({ theme }) => theme.colors.silver};
+          font-size: 1rem;
+          color: ${({ theme }) => theme.colors.silver};
 
-        &::before {
-          content: '';
-          height: 1px;
-          width: 100%;
-          max-width: 2rem;
-          background-color: ${({ theme }) => theme.colors.carrot_orange};
-          margin-right: 0.9rem;
+          &::before {
+            content: '';
+            height: 1px;
+            width: 100%;
+            max-width: 2rem;
+            background-color: ${({ theme }) => theme.colors.carrot_orange};
+            margin-right: 0.9rem;
+          }
         }
       }
     }
@@ -88,8 +88,8 @@ export const Container = styled.section`
 
       img {
         margin: 0 auto;
-        width: 34.125rem;
-        height: 35.125rem;
+        width: 27.125rem;
+        height: 28.125rem;
         transition: 300ms;
 
         @media (min-width: 680px) {

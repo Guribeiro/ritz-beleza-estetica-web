@@ -37,19 +37,19 @@ const ThemeProvider = ({ children }: Props): JSX.Element => {
     [theme],
   );
 
-  useEffect(() => {
-    const loadPersistentTheme = () => {
-      const themePersisted = localStorage.getItem(`guribeiro-dev/theme`);
-      if (themePersisted) {
-        setTheme(JSON.parse(themePersisted));
-      }
-    };
-    loadPersistentTheme();
-  }, []);
+  // useEffect(() => {
+  //   const loadPersistentTheme = () => {
+  //     const themePersisted = localStorage.getItem(`guribeiro-dev/theme`);
+  //     if (themePersisted) {
+  //       setTheme(JSON.parse(themePersisted));
+  //     }
+  //   };
+  //   loadPersistentTheme();
+  // }, []);
 
-  useEffect(() => {
-    localStorage.setItem(`guribeiro-dev/theme`, JSON.stringify(theme));
-  }, [theme]);
+  // useEffect(() => {
+  //   localStorage.setItem(`guribeiro-dev/theme`, JSON.stringify(theme));
+  // }, [theme]);
 
   return (
     <ThemeContext.Provider value={{ changeMainColor, theme }}>

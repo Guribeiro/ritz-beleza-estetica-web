@@ -19,19 +19,19 @@ const Welcome = (): JSX.Element => {
             Temos tudo o que você precisa para se sentir bem e feliz com a sua
             aparência.
           </p>
-        </div>
 
-        <ul>
-          <li>
-            Ritz é um salão de beleza e estética focado no bem estar de seus
-            clientes
-          </li>
-          <li>
-            Profissionais especializados e prontos para os cuidados que você
-            merece
-          </li>
-          <li>Trabalhamos com os melhores produtos do mercado</li>
-        </ul>
+          <ul>
+            <li>
+              Ritz é um salão de beleza e estética focado no bem estar de seus
+              clientes
+            </li>
+            <li>
+              Profissionais especializados e prontos para os cuidados que você
+              merece
+            </li>
+            <li>Trabalhamos com os melhores produtos do mercado</li>
+          </ul>
+        </div>
 
         <figure>
           <Image src={backgroundImage} alt="woman" />

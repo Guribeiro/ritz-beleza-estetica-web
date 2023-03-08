@@ -22,3 +22,14 @@ export const jumping = keyframes`
     transform: translateY(2px);
   }
 `;
+
+export const rotate = keyframes`
+  from {
+
+    transform: rotate(0deg);
+  }
+  to {
+
+    transform: rotate(360deg);
+  }
+`;
