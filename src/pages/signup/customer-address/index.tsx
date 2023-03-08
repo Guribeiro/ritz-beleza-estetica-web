@@ -39,10 +39,6 @@ interface CepPromiseError {
 }
 
 interface CustomerDetailsFormData {
-  first_name: string;
-  last_name: string;
-  birth_date: string;
-  cpf: string;
   cep: string;
   address: string;
   city: string;
@@ -53,10 +49,6 @@ interface CustomerDetailsFormData {
 }
 
 const defaultValues: CustomerDetailsFormData = {
-  first_name: ``,
-  last_name: ``,
-  birth_date: ``,
-  cpf: ``,
   cep: ``,
   address: ``,
   city: ``,
@@ -67,10 +59,6 @@ const defaultValues: CustomerDetailsFormData = {
 };
 
 const schema = yup.object().shape({
-  first_name: yup.string().required(`Obrigatório`),
-  last_name: yup.string().required(`Obrigatório`),
-  birth_date: yup.string().required(`Obrigatório`).length(10),
-  cpf: yup.string().required(`Obrigatório`).length(14),
   cep: yup
     .string()
     .transform((value: string, originalValue: string) => {
@@ -108,8 +96,6 @@ const CustomerDetails = (): JSX.Element => {
       const [cep] = getValues([`cep`]);
 
       const cepFormatted = cep.replace(/[-_]/g, ``);
-
-      console.log(cepFormatted.length, cepFormatted);
 
       if (cepFormatted.length < 8) {
         return;
@@ -187,8 +173,9 @@ const CustomerDetails = (): JSX.Element => {
                     fieldState: { error },
                   }) => (
                     <MaskedInput
+                      label="cep"
                       mask={`99999-999`}
-                      placeholder="cep"
+                      placeholder="00000-000"
                       onChange={onChange}
                       value={value}
                       error={error?.message}
@@ -209,7 +196,8 @@ const CustomerDetails = (): JSX.Element => {
                     fieldState: { error },
                   }) => (
                     <Select
-                      placeholder="cidade"
+                      label="estado"
+                      placeholder="Ex: São Paulo"
                       onChange={onChange}
                       value={value}
                       error={error?.message}
@@ -233,7 +221,8 @@ const CustomerDetails = (): JSX.Element => {
                     fieldState: { error },
                   }) => (
                     <TextInput
-                      placeholder="cidade"
+                      label="cidade"
+                      placeholder="Arujá"
                       onChange={onChange}
                       value={value}
                       error={error?.message}
@@ -252,7 +241,8 @@ const CustomerDetails = (): JSX.Element => {
                     fieldState: { error },
                   }) => (
                     <TextInput
-                      placeholder="rua"
+                      label="rua"
+                      placeholder="Rodovia Alberto Hinoto"
                       onChange={onChange}
                       value={value}
                       error={error?.message}

@@ -1,14 +1,15 @@
 import { InputHTMLAttributes, useState } from 'react';
 
-import { Container, Input } from './styles';
-
-import { Fieldset } from '../styles';
+import { Input } from './styles';
+import { Container, Content } from '../styles';
 
 type TextInputProps = InputHTMLAttributes<HTMLInputElement> & {
+  label?: string;
   error?: string;
 };
 
 const TextInput = ({
+  label,
   type,
   title,
   onChange,
@@ -20,15 +21,18 @@ const TextInput = ({
 
   return (
     <Container isFocused={isFocused} isErrored={!!error} isFilled={!!value}>
-      <Input
-        title={title}
-        {...props}
-        onFocus={() => setIsFocused(true)}
-        onBlur={() => setIsFocused(false)}
-        onChange={onChange}
-        value={value}
-      />
-      {error && <span>{error}</span>}
+      <label htmlFor="">{label}</label>
+      <Content>
+        <Input
+          title={title}
+          {...props}
+          onFocus={() => setIsFocused(true)}
+          onBlur={() => setIsFocused(false)}
+          onChange={onChange}
+          value={value}
+        />
+        {error && <span>{error}</span>}
+      </Content>
     </Container>
   );
 };

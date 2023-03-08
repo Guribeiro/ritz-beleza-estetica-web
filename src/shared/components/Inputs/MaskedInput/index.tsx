@@ -1,13 +1,16 @@
 import { useState } from 'react';
 import { Props } from 'react-input-mask';
-import { Container, Input } from './styles';
+import { Input } from './styles';
+import { Container, Content } from '../styles';
 
 type MaskedInputProps = Props & {
+  label?: string;
   error?: string;
 };
 
 const MaskedInput = ({
   title,
+  label,
   error,
   onChange,
   value,
@@ -17,15 +20,18 @@ const MaskedInput = ({
 
   return (
     <Container isFocused={isFocused} isErrored={!!error} isFilled={!!value}>
-      <Input
-        title={title}
-        onFocus={() => setIsFocused(true)}
-        onBlur={() => setIsFocused(false)}
-        value={value}
-        onChange={onChange}
-        {...props}
-      />
-      {error && <span>{error}</span>}
+      <label htmlFor="">{label}</label>
+      <Content>
+        <Input
+          title={title}
+          onFocus={() => setIsFocused(true)}
+          onBlur={() => setIsFocused(false)}
+          value={value}
+          onChange={onChange}
+          {...props}
+        />
+        {error && <span>{error}</span>}
+      </Content>
     </Container>
   );
 };

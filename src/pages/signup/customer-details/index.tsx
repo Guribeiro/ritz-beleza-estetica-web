@@ -115,7 +115,8 @@ const CustomerDetails = (): JSX.Element => {
                     fieldState: { error },
                   }) => (
                     <TextInput
-                      placeholder="nome"
+                      label="nome"
+                      placeholder="Informe seu nome"
                       onChange={onChange}
                       value={value}
                       error={error?.message}
@@ -132,7 +133,8 @@ const CustomerDetails = (): JSX.Element => {
                     fieldState: { error },
                   }) => (
                     <TextInput
-                      placeholder="sobrenome"
+                      label="sobrenome"
+                      placeholder="Informe seu sobrenome"
                       onChange={onChange}
                       value={value}
                       error={error?.message}
@@ -151,8 +153,9 @@ const CustomerDetails = (): JSX.Element => {
                     fieldState: { error },
                   }) => (
                     <MaskedInput
+                      label="data de nascimento"
                       mask={`99/99/9999`}
-                      placeholder="nascimento"
+                      placeholder="Ex: 20/04/1997"
                       onChange={onChange}
                       value={value}
                       error={error?.message}
@@ -169,8 +172,9 @@ const CustomerDetails = (): JSX.Element => {
                     fieldState: { error },
                   }) => (
                     <MaskedInput
+                      label="cpf"
                       mask={`999.999.999-99`}
-                      placeholder="cpf"
+                      placeholder="000.000.000-00"
                       onChange={onChange}
                       value={value}
                       error={error?.message}
@@ -189,8 +193,9 @@ const CustomerDetails = (): JSX.Element => {
                     fieldState: { error },
                   }) => (
                     <MaskedInput
+                      label="telefone"
                       mask={`+55 (99) 99999-9999`}
-                      placeholder="telefone"
+                      placeholder="+55 (99) 99999-9999"
                       prefix="+55"
                       onChange={onChange}
                       value={value}

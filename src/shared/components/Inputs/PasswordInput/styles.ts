@@ -1,22 +1,5 @@
 import styled from 'styled-components';
 
-import { Fieldset } from '../styles';
-
-export const Container = styled(Fieldset)`
-  .row {
-    display: flex;
-    align-items: center;
-
-    > button {
-      padding: 0.8rem;
-
-      > svg {
-        color: ${({ theme }) => theme.colors.silver};
-      }
-    }
-  }
-`;
-
 export const Input = styled.input`
   color: ${({ theme }) => theme.colors.night};
   font-size: 1.6rem;

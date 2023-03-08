@@ -1,14 +1,87 @@
 import { SelectHTMLAttributes, useState } from 'react';
-import styled from 'styled-components';
 
-const Container = styled.div``;
+import styled, { css } from 'styled-components';
 
-const Label = styled.label`
-  font-size: 1.4rem;
-  color: ${({ theme }) => theme.colors.silver};
-  /* margin-bottom: 0.2rem; */
-  padding: 0.4rem 0;
-  font-family: 'Playfair Display', serif;
+interface ContainerProps {
+  isFocused?: boolean;
+  isErrored?: boolean;
+  isFilled?: boolean;
+}
+
+export const Container = styled.div<ContainerProps>`
+  position: relative;
+  padding-top: 2rem;
+
+  > label {
+    position: absolute;
+    font-size: 1rem;
+    top: 0;
+    display: inline-block;
+    color: ${({ theme }) => theme.colors.night};
+    font-weight: 600;
+    text-transform: uppercase;
+
+    ${({ isErrored, theme }) =>
+      isErrored &&
+      css`
+        color: ${theme.colors.red};
+      `}
+
+    ${({ isFocused, theme }) =>
+      isFocused &&
+      css`
+        color: ${theme.colors.carrot_orange};
+      `}
+
+
+  ${({ isFilled, isErrored, theme }) =>
+      isFilled &&
+      !isErrored &&
+      css`
+        color: ${theme.colors.carrot_orange};
+      `}
+  }
+
+  > fieldset {
+    border: 1px solid ${({ theme }) => theme.colors.platinum};
+
+    border-radius: 0.8rem;
+    overflow: hidden;
+
+    ${({ isErrored, theme }) =>
+      isErrored &&
+      css`
+        border-color: ${theme.colors.red};
+      `}
+
+    ${({ isFocused, theme }) =>
+      isFocused &&
+      css`
+        border-color: ${theme.colors.carrot_orange};
+      `}
+
+
+  ${({ isFilled, isErrored, theme }) =>
+      isFilled &&
+      !isErrored &&
+      css`
+        border-color: ${theme.colors.carrot_orange};
+      `}
+  }
+`;
+
+export const Content = styled.fieldset`
+  > span {
+    color: red;
+    font-size: 1.2rem;
+    position: absolute;
+    right: 0.5rem;
+    bottom: 0.2rem;
+  }
+
+  & + fieldset {
+    margin-top: 0.8rem;
+  }
 `;
 
 const SelectInput = styled.select`
@@ -25,15 +98,15 @@ const SelectInput = styled.select`
   padding: 1.6rem;
 `;
 
-import { Fieldset } from '../Inputs/styles';
-
 type SelectProps = SelectHTMLAttributes<HTMLSelectElement> & {
+  label?: string;
   error?: string;
 };
 
 const Select = ({
   id,
   title,
+  label,
   onChange,
   value,
   error,
@@ -41,22 +114,25 @@ const Select = ({
 }: SelectProps): JSX.Element => {
   const [isFocused, setIsFocused] = useState(false);
   return (
-    <Fieldset
+    <Container
       isFocused={isFocused}
       isErrored={!!error}
       isFilled={!!value && value !== `none`}
     >
-      <SelectInput
-        id={id}
-        title={title}
-        onFocus={() => setIsFocused(true)}
-        onBlur={() => setIsFocused(false)}
-        onChange={onChange}
-        value={value}
-        {...props}
-      />
-      {error && <span>{error}</span>}
-    </Fieldset>
+      <label htmlFor="">{label}</label>
+      <Content>
+        <SelectInput
+          id={id}
+          title={title}
+          onFocus={() => setIsFocused(true)}
+          onBlur={() => setIsFocused(false)}
+          onChange={onChange}
+          value={value}
+          {...props}
+        />
+        {error && <span>{error}</span>}
+      </Content>
+    </Container>
   );
 };
 

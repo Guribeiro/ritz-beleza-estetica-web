@@ -3,8 +3,8 @@ import styled from 'styled-components';
 
 const Container = styled.div`
   > span {
-    font-size: 1.6rem;
-    margin-bottom: 0.8rem;
+    font-size: 2rem;
+    margin-bottom: 1.6rem;
     display: block;
   }
 `;

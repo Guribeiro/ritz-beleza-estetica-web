@@ -1,31 +1,4 @@
-import styled, { css } from 'styled-components';
-
-import { Fieldset } from '../styles';
-
-export const Container = styled(Fieldset)`
-  ${({ isErrored, theme }) =>
-    isErrored &&
-    css`
-      border-color: ${theme.colors.red};
-    `}
-
-  ${({ isFocused, theme }) =>
-    isFocused &&
-    css`
-      border-color: ${theme.colors.carrot_orange};
-    `}
-
-  ${({ isFilled, isErrored, theme }) =>
-    isFilled &&
-    !isErrored &&
-    css`
-      border-color: ${theme.colors.carrot_orange};
-    `}
-
-  & + fieldset {
-    margin-top: 0.8rem;
-  }
-`;
+import styled from 'styled-components';
 
 export const Input = styled.input`
   font-size: 1.6rem;
