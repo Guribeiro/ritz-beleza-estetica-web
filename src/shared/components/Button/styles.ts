@@ -1,9 +1,13 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { darken } from 'polished';
 
 import { rotate } from '@/styles/animations';
 
-export const Container = styled.button`
+interface ContainerProps {
+  loading?: boolean;
+}
+
+export const Container = styled.button<ContainerProps>`
   width: 100%;
   padding: 1.6rem;
   background-color: ${({ theme }) => theme.colors.carrot_orange};
@@ -12,12 +16,20 @@ export const Container = styled.button`
   font-size: 1.6rem;
   font-family: 'Playfair Display', serif;
 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   &:hover {
     background-color: ${({ theme }) =>
       darken(0.05, theme.colors.carrot_orange)};
   }
 
   > svg {
-    animation: ${rotate} 2s linear infinite;
+    ${({ loading }) =>
+      loading &&
+      css`
+        animation: ${rotate} 2s linear infinite;
+      `}
   }
 `;
