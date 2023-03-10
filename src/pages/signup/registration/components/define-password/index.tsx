@@ -13,6 +13,7 @@ import { api } from '@/shared/services/api';
 import { errorHandler } from '@/shared/utils/error-handler';
 import { useRegistration } from '../../hooks/useRegistration';
 import { useCallback, useState } from 'react';
+import { toast } from 'react-toastify';
 
 interface DefinePasswordFormData {
   password: string;
@@ -52,6 +53,10 @@ const DefinePassword = (props): JSX.Element => {
           ...customerRegistrationData,
           password,
         });
+
+        toast.success(
+          `Conta criada com sucesso, você já pode logar na aplicação`,
+        );
 
         push(`/signin`);
       } catch (error) {
