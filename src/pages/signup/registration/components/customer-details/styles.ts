@@ -1,8 +1,16 @@
 import styled from 'styled-components';
 
 export const Container = styled.main`
-  min-height: 100vh;
+  padding: 3rem;
 
+  > button {
+    max-width: 10rem;
+    margin-bottom: 1.6rem;
+  }
+`;
+
+export const Content = styled.main`
+  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
