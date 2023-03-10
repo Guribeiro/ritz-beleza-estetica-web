@@ -27,7 +27,7 @@ export const AnimationContainer = styled.div`
   > a {
     color: #ff9000;
     display: block;
-    margin-top: 24px;
+    margin-top: 2.4rem;
     text-decoration: none;
     transition: color 0.3s;
 
@@ -68,7 +68,7 @@ export const Content = styled.section`
   align-items: center;
   justify-content: center;
 
-  /* width: 52rem; */
+  padding: 4.2rem 3rem;
 
   h1 {
     font-size: 4.2rem;
@@ -96,21 +96,17 @@ export const Content = styled.section`
   }
 
   > form {
-    padding: 4.2rem 3rem;
-    width: 52rem;
+    max-width: 52rem;
+    width: 100%;
+
     text-align: center;
+    margin-bottom: 2rem;
 
     display: flex;
     flex-direction: column;
 
     > button {
-      padding: 2rem 1.6rem;
-      background-color: ${({ theme }) => theme.colors.carrot_orange};
-      color: ${({ theme }) => theme.colors.anti_flash};
-      border-radius: 0.8rem;
       margin-top: 1.6rem;
-      font-size: 1.6rem;
-      font-family: 'Playfair Display', serif;
     }
 
     a {

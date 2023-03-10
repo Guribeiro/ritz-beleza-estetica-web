@@ -10,8 +10,8 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 
 const Button = ({ children, loading, ...props }: ButtonProps): JSX.Element => {
   return (
-    <Container {...props} loading={loading}>
-      {loading ? <IconFidgetSpinner size={16} /> : children}
+    <Container {...props} loading={!!loading}>
+      {loading ? <IconFidgetSpinner size={20} /> : children}
     </Container>
   );
 };
