@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { GetServerSideProps } from 'next';
 import { FormEvent } from 'react';
 import { useForm, Controller } from 'react-hook-form';
 import * as yup from 'yup';
@@ -91,6 +92,12 @@ const Signin = (): JSX.Element => {
       </AnimationContainer>
     </Container>
   );
+};
+
+export const getServerSideProps: GetServerSideProps = async () => {
+  return {
+    props: {},
+  };
 };
 
 export default Signin;
