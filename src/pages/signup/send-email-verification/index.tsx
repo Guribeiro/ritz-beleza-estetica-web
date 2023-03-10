@@ -1,13 +1,18 @@
-import { Container, Form } from './styles';
-
+import { useState } from 'react';
+import { toast } from 'react-toastify';
 import { useForm, Controller } from 'react-hook-form';
 
-import TextInput from '@/shared/components/Inputs/TextInput';
-import Button from '@/shared/components/Button';
+import { yupResolver } from '@hookform/resolvers/yup';
+
+import * as yup from 'yup';
 
 import { api } from '@/shared/services/api';
-import { useState } from 'react';
+import Button from '@/shared/components/Button';
+import TextInput from '@/shared/components/Inputs/TextInput';
+
 import { errorHandler } from '@/shared/utils/error-handler';
+
+import { Container, Form } from './styles';
 
 interface SendEmailVerificationFormData {
   email: string;
@@ -17,10 +22,15 @@ const defaultValues: SendEmailVerificationFormData = {
   email: ``,
 };
 
+const schema = yup.object().shape({
+  email: yup.string().required(`campo obrigatório`),
+});
+
 const SendEmailVerification = (): JSX.Element => {
   const [loading, setLoading] = useState(false);
   const { control, handleSubmit } = useForm<SendEmailVerificationFormData>({
     defaultValues,
+    resolver: yupResolver(schema),
   });
 
   const onSubmit = async ({ email }: SendEmailVerificationFormData) => {
@@ -31,13 +41,12 @@ const SendEmailVerification = (): JSX.Element => {
         email,
       });
 
-      alert(
-        `email de confirmação enviado com sucesso.\n Por favor, chegue sua caixa de entrada`,
+      toast.success(
+        `email de confirmação enviado com sucesso.\n Por favor, checar sua caixa de entrada`,
       );
     } catch (error) {
       const message = errorHandler(error);
-
-      alert(message);
+      toast.error(message);
     } finally {
       setLoading(false);
     }
@@ -52,12 +61,16 @@ const SendEmailVerification = (): JSX.Element => {
           <Controller
             control={control}
             name="email"
-            render={({ field: { name, value, onChange } }) => (
+            render={({
+              field: { name, value, onChange },
+              fieldState: { error },
+            }) => (
               <TextInput
-                name={name}
-                placeholder="email"
+                label="email"
+                placeholder="Ex: jonhdoe@email.com"
                 onChange={onChange}
                 value={value}
+                error={error?.message}
               />
             )}
           />
