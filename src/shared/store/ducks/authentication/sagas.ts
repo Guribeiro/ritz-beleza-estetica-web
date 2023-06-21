@@ -94,7 +94,7 @@ function apiRequestAuthentication({
   email,
   password,
 }: ApiRequestAuthenticationProps) {
-  return api.post(`/sessions`, {
+  return api.post(`/signin`, {
     email,
     password,
   });
@@ -211,6 +211,8 @@ export function* login({ payload }: Action) {
     );
 
     const { user, token, refresh_token } = response.data;
+
+    console.log(response.data);
 
     api.defaults.headers.common[`Authorization`] = `Bearer ${token}`;
 

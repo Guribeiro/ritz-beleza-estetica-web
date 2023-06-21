@@ -1,5 +1,4 @@
 import { useEffect, useRef, useState } from 'react';
-import { IconMenu2 } from '@tabler/icons-react';
 import { useScrollPosition } from '@/hooks/useScrollPosition';
 import { useTheme } from '@/hooks/theme';
 

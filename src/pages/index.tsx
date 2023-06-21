@@ -3,20 +3,6 @@ import Mobile from '@/components/mobile';
 import { useEffect, useState } from 'react';
 import { GetStaticProps } from 'next';
 
-import preloadedAuthenticationState from '@/shared/store/ducks/authentication/preloadedAuthenticationState';
-
-export const getStaticProps: GetStaticProps = () => {
-  const authenticationState = preloadedAuthenticationState();
-
-  return {
-    props: {
-      preloadedState: {
-        authenticationState,
-      },
-    },
-  };
-};
-
 export default function Home() {
   const [isMobile, setIsMobile] = useState(false);
 

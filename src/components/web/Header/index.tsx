@@ -1,17 +1,31 @@
 import { useEffect, useRef } from 'react';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import { useScrollPosition } from '@/hooks/useScrollPosition';
 import { useTheme } from '@/hooks/theme';
 
+import { api } from '@/shared/services/api';
+
 import { Container } from './styles';
+import { errorHandler } from '@/shared/utils/error-handler';
 
 const Header = (): JSX.Element => {
   const { position } = useScrollPosition();
   const { theme } = useTheme();
+  const { push } = useRouter();
 
   const headerRef = useRef<HTMLHeadingElement>(null);
   const headerSectionRef = useRef<HTMLElement>(null);
+
+  // const onNavigateToApplication = async () => {
+  //   try {
+  //     await api.get(`/redirect_signin`);
+  //   } catch (error) {
+  //     const message = errorHandler(error);
+  //     alert(message);
+  //   }
+  // };
 
   useEffect(() => {
     if (headerRef.current) {
@@ -35,6 +49,7 @@ const Header = (): JSX.Element => {
       }
     }
   }, [position]);
+
   return (
     <Container ref={headerRef}>
       <section ref={headerSectionRef}>
@@ -59,7 +74,7 @@ const Header = (): JSX.Element => {
           </ul>
         </nav>
         <h3>RITZ</h3>
-        <Link href="/signin">Entrar</Link>
+        <button onClick={() => push(`http://127.0.0.1:5173`)}>Entrar</button>
       </section>
     </Container>
   );

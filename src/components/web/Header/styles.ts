@@ -26,7 +26,7 @@ export const Container = styled.header`
     border-bottom-color: ${({ theme }) => theme.colors.platinum};
     border-bottom-style: solid;
 
-    > a {
+    > button {
       right: 0;
       color: ${({ theme }) => theme.colors.carrot_orange};
       border-radius: 0.4rem;
