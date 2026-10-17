@@ -1,6 +1,7 @@
 'use client';
 
 import Image from 'next/image';
+import { cn } from '@/lib/utils';
 import { serviceCategories, whatsappLink } from '@/config/salon';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 
@@ -61,7 +62,7 @@ export function ServicesMenu() {
                       href={whatsappLink(service.name)}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-sm font-normal tracking-wide text-jade underline decoration-latao underline-offset-6 transition-colors hover:text-jade-escuro hover:decoration-jade"
+                      className="text-sm font-normal tracking-wide text-latao-escuro underline decoration-latao underline-offset-6 transition-colors hover:text-grafite hover:decoration-latao-escuro"
                     >
                       Agendar {service.name.toLowerCase()}
                       <span className="sr-only"> pelo WhatsApp</span>
@@ -78,7 +79,10 @@ export function ServicesMenu() {
                   alt={category.imageAlt}
                   placeholder="blur"
                   sizes="(min-width: 768px) 20rem, 90vw"
-                  className="size-full object-cover"
+                  className={cn(
+                    'size-full object-cover',
+                    category.imagePosition,
+                  )}
                 />
               </div>
             </figure>

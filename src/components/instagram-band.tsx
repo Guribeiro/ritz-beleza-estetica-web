@@ -4,13 +4,10 @@ import { Button } from '@/components/ui/button';
 
 export function InstagramBand() {
   return (
-    <section
-      id="instagram"
-      className="bg-jade text-marfim [--ring:var(--marfim)]"
-    >
+    <section id="instagram" className="border-t border-border on-laca">
       <div className="mx-auto grid max-w-6xl gap-8 px-4 py-20 sm:px-6 md:grid-cols-[1fr_auto] md:items-end md:py-24">
         <div>
-          <h2 className="font-display text-4xl leading-none break-words sm:text-5xl md:text-6xl">
+          <h2 className="font-display text-4xl leading-none break-words text-latao sm:text-5xl md:text-6xl">
             @{salon.instagram.handle}
           </h2>
           <p className="mt-5 max-w-[46ch] text-marfim/85">
@@ -22,7 +19,7 @@ export function InstagramBand() {
           asChild
           variant="outline"
           size="xl"
-          className="w-full border-marfim/60 bg-transparent text-marfim hover:bg-marfim hover:text-jade sm:w-fit"
+          className="w-full border-latao bg-transparent text-latao hover:bg-latao hover:text-laca sm:w-fit"
         >
           <a
             href={salon.instagram.url}

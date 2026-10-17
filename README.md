@@ -42,6 +42,16 @@ pnpm install
 pnpm dev
 ```
 
+### Photo credits
+
+Photos from [Unsplash](https://unsplash.com/license) (free to use). Replace them with the salon's own photos in `src/assets/` whenever available.
+
+- Hero: [Hamed Farahpour](https://unsplash.com/photos/sOmsarJ6FFc)
+- Cabelo: [Baylee Gramling](https://unsplash.com/photos/a3xr2mVjT5M)
+- Make: [LOLA AZIZADA](https://unsplash.com/photos/I3y-aJ4DWng)
+- Unhas: [Chelson Tamares](https://unsplash.com/photos/vtQHwU4F13s)
+- Estética: [Katherine Hanlon](https://unsplash.com/photos/WAm_HaI4W2E)
+
 ## 💻 Web version
 <h1 align="center">
   <img alt="Web version" src=".github/assets/web.png">

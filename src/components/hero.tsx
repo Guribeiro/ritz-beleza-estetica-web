@@ -1,5 +1,5 @@
 import { IconBrandWhatsapp } from '@tabler/icons-react';
-import heroImage from '@/assets/ritz-home-background.png';
+import heroImage from '@/assets/hero.jpg';
 import { salon, whatsappLink } from '@/config/salon';
 import { Button } from '@/components/ui/button';
 import { DecoArch } from '@/components/deco-arch';
@@ -49,7 +49,7 @@ export function Hero() {
 
           <DecoArch
             image={heroImage}
-            alt="Mulher sorrindo com longos cabelos ruivos em movimento"
+            alt="Retrato de mulher com longos cabelos castanhos sobre fundo escuro"
             className="mx-auto max-w-[20rem] sm:max-w-[24rem] lg:order-2"
           />
         </div>

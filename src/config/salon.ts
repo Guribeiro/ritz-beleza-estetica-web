@@ -1,9 +1,9 @@
 import type { StaticImageData } from 'next/image';
 
-import cabelos from '@/assets/services/cabelos.png';
-import makeup from '@/assets/services/makeup.png';
-import manicure from '@/assets/services/manicure.png';
-import tratamentoFacial from '@/assets/services/tratamento-facial.png';
+import cabelo from '@/assets/services/cabelo.jpg';
+import estetica from '@/assets/services/estetica.jpg';
+import make from '@/assets/services/make.jpg';
+import unhas from '@/assets/services/unhas.jpg';
 
 /**
  * Dados do salão em um só lugar. Fonte: Instagram @ritz.aruja.
@@ -54,6 +54,8 @@ export type ServiceCategory = {
   summary: string;
   image: StaticImageData;
   imageAlt: string;
+  /** Classe object-position do Tailwind, para fotos que pedem outro recorte. */
+  imagePosition?: string;
   services: { name: string; detail: string }[];
 };
 
@@ -63,8 +65,8 @@ export const serviceCategories: ServiceCategory[] = [
     id: 'cabelo',
     name: 'Cabelo',
     summary: 'Do corte do dia a dia ao penteado da festa.',
-    image: cabelos,
-    imageAlt: 'Mulher de costas com cabelo loiro longo em movimento',
+    image: cabelo,
+    imageAlt: 'Cabelo castanho com mechas iluminadas e cachos modelados',
     services: [
       { name: 'Corte', detail: 'Feminino, com lavagem e finalização' },
       { name: 'Escova', detail: 'Lisa, modelada ou com ondas' },
@@ -80,8 +82,8 @@ export const serviceCategories: ServiceCategory[] = [
     id: 'make',
     name: 'Make',
     summary: 'Maquiagem que acompanha a ocasião, não esconde você.',
-    image: makeup,
-    imageAlt: 'Maquiadora aplicando sombra com pincel em uma cliente',
+    image: make,
+    imageAlt: 'Close de olho com sombra dourada recebendo máscara de cílios',
     services: [
       {
         name: 'Maquiagem social',
@@ -94,8 +96,8 @@ export const serviceCategories: ServiceCategory[] = [
     id: 'unhas',
     name: 'Unhas',
     summary: 'Cuidado de mãos e pés com acabamento impecável.',
-    image: manicure,
-    imageAlt: 'Mãos com esmaltação clara sobre mesa de manicure rosa',
+    image: unhas,
+    imageAlt: 'Mão com unhas em esmalte nude sobre tecido claro',
     services: [
       { name: 'Manicure', detail: 'Cutilagem e esmaltação' },
       { name: 'Pedicure', detail: 'Cutilagem, lixamento e esmaltação' },
@@ -105,8 +107,9 @@ export const serviceCategories: ServiceCategory[] = [
     id: 'estetica',
     name: 'Estética',
     summary: 'Pele cuidada e depilação com conforto.',
-    image: tratamentoFacial,
-    imageAlt: 'Cliente deitada recebendo tratamento facial',
+    image: estetica,
+    imagePosition: 'object-[72%_50%]',
+    imageAlt: 'Mãos fazendo massagem facial em ambiente à luz de vela',
     services: [
       {
         name: 'Tratamento facial',

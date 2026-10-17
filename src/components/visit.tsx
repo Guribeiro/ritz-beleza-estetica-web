@@ -30,7 +30,7 @@ export function Visit() {
                   href={mapsUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-jade underline decoration-latao underline-offset-6 hover:decoration-jade"
+                  className="text-latao-escuro underline decoration-latao underline-offset-6 transition-colors hover:text-grafite hover:decoration-latao-escuro"
                 >
                   Abrir no Google Maps
                 </a>
@@ -45,7 +45,10 @@ export function Visit() {
             <div>
               <dt className="text-sm tracking-wide text-nevoa">Contato</dt>
               <dd className="mt-1 text-xl font-normal">
-                <a href={`tel:${salon.phone.tel}`} className="hover:text-jade">
+                <a
+                  href={`tel:${salon.phone.tel}`}
+                  className="hover:text-latao-escuro"
+                >
                   {salon.phone.display}
                 </a>
               </dd>
@@ -54,7 +57,7 @@ export function Visit() {
                   href={whatsappLink()}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-jade underline decoration-latao underline-offset-6 hover:decoration-jade"
+                  className="text-latao-escuro underline decoration-latao underline-offset-6 transition-colors hover:text-grafite hover:decoration-latao-escuro"
                 >
                   Agendar pelo WhatsApp
                 </a>

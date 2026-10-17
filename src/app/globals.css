@@ -4,18 +4,16 @@
 
 /*
  * Paleta Ritz — art déco.
- * laca (preto verdadeiro), latão, marfim rosé, jade, grafite, névoa.
+ * laca (preto verdadeiro), latão, marfim rosé, grafite, névoa.
  * O latão só é usado como texto sobre laca; sobre marfim ele é decorativo
- * (filetes) e o texto/foco usam latão escuro ou jade para manter o contraste.
+ * (filetes) e o texto/foco usam o latão escuro (5.3:1) para manter o contraste.
  */
 :root {
   --laca: #000000;
   --latao: #b8954f;
-  --latao-escuro: #8c6d33;
+  --latao-escuro: #735827;
   --marfim: #efe4df;
   --marfim-claro: #f6efeb;
-  --jade: #2f5d50;
-  --jade-escuro: #234a3f;
   --grafite: #2a2624;
   --nevoa: #665c57;
 
@@ -25,7 +23,7 @@
   --card-foreground: var(--grafite);
   --popover: var(--laca);
   --popover-foreground: var(--marfim);
-  --primary: var(--jade);
+  --primary: var(--laca);
   --primary-foreground: var(--marfim);
   --secondary: var(--marfim-claro);
   --secondary-foreground: var(--grafite);
@@ -49,8 +47,6 @@
   --color-latao-escuro: var(--latao-escuro);
   --color-marfim: var(--marfim);
   --color-marfim-claro: var(--marfim-claro);
-  --color-jade: var(--jade);
-  --color-jade-escuro: var(--jade-escuro);
   --color-grafite: var(--grafite);
   --color-nevoa: var(--nevoa);
 
