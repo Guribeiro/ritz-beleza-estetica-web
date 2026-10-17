@@ -3,6 +3,7 @@ import heroImage from '@/assets/hero.jpg';
 import { salon, whatsappLink } from '@/config/salon';
 import { Button } from '@/components/ui/button';
 import { DecoArch } from '@/components/deco-arch';
+import { RitzLogo } from '@/components/ritz-logo';
 
 export function Hero() {
   return (
@@ -10,12 +11,7 @@ export function Hero() {
       <div className="mx-auto max-w-6xl px-4 pt-6 sm:px-6 md:pt-10">
         <div id="masthead" className="text-center">
           <h1>
-            <span className="[margin-right:-0.28em] block font-display text-[clamp(4.5rem,17vw,10.5rem)] leading-[0.85] tracking-[0.28em]">
-              RITZ
-            </span>
-            <span className="mt-4 block text-base font-light tracking-[0.12em] text-latao md:text-xl">
-              Beleza & Estética
-            </span>
+            <RitzLogo className="mx-auto w-[min(34rem,86vw)]" />
           </h1>
         </div>
 

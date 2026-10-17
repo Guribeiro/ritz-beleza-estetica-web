@@ -4,6 +4,7 @@ import {
   IconBrandWhatsapp,
 } from '@tabler/icons-react';
 import { salon, whatsappLink } from '@/config/salon';
+import { RitzLogo } from '@/components/ritz-logo';
 
 const socials = [
   { href: salon.instagram.url, label: 'Instagram', Icon: IconBrandInstagram },
@@ -16,11 +17,9 @@ export function SiteFooter() {
     <footer className="on-laca pb-24 md:pb-0">
       <div className="mx-auto flex max-w-6xl flex-col gap-10 border-t border-border px-4 py-14 sm:px-6 md:flex-row md:items-end md:justify-between">
         <div>
-          <p className="font-display text-5xl leading-none tracking-[0.28em] text-latao">
-            RITZ
-          </p>
-          <p className="mt-3 text-marfim/75">
-            {salon.name}, {salon.address.city} – {salon.address.state}
+          <RitzLogo className="w-52" />
+          <p className="mt-4 text-marfim/75">
+            {salon.address.place}, {salon.address.city} – {salon.address.state}
           </p>
         </div>
 

@@ -6,6 +6,7 @@ import { IconBrandWhatsapp } from '@tabler/icons-react';
 import { cn } from '@/lib/utils';
 import { whatsappLink } from '@/config/salon';
 import { Button } from '@/components/ui/button';
+import { RitzLogo } from '@/components/ritz-logo';
 import {
   Sheet,
   SheetClose,
@@ -64,11 +65,11 @@ export function SiteHeader() {
           aria-hidden={!showLogo}
           tabIndex={showLogo ? 0 : -1}
           className={cn(
-            'col-start-2 font-display text-2xl leading-none tracking-[0.3em] transition-opacity duration-300',
+            'col-start-2 transition-opacity duration-300',
             showLogo ? 'opacity-100' : 'pointer-events-none opacity-0',
           )}
         >
-          RITZ
+          <RitzLogo variant="wordmark" title="Ritz" className="w-24" />
         </a>
 
         <div className="col-start-3 flex justify-end">
@@ -94,8 +95,8 @@ export function SiteHeader() {
               side="top"
               className="h-svh border-none on-laca px-6 pt-20 pb-10 [&_[data-slot=sheet-close]]:text-marfim"
             >
-              <SheetTitle className="font-display text-5xl font-normal tracking-[0.3em] text-latao">
-                RITZ
+              <SheetTitle>
+                <RitzLogo className="w-56" />
               </SheetTitle>
               <SheetDescription className="sr-only">
                 Navegação do site
