@@ -1,0 +1,142 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+@import 'shadcn/tailwind.css';
+
+/*
+ * Paleta Ritz — art déco.
+ * laca (preto verdadeiro), latão, marfim rosé, jade, grafite, névoa.
+ * O latão só é usado como texto sobre laca; sobre marfim ele é decorativo
+ * (filetes) e o texto/foco usam latão escuro ou jade para manter o contraste.
+ */
+:root {
+  --laca: #000000;
+  --latao: #b8954f;
+  --latao-escuro: #8c6d33;
+  --marfim: #efe4df;
+  --marfim-claro: #f6efeb;
+  --jade: #2f5d50;
+  --jade-escuro: #234a3f;
+  --grafite: #2a2624;
+  --nevoa: #665c57;
+
+  --background: var(--marfim);
+  --foreground: var(--grafite);
+  --card: var(--marfim-claro);
+  --card-foreground: var(--grafite);
+  --popover: var(--laca);
+  --popover-foreground: var(--marfim);
+  --primary: var(--jade);
+  --primary-foreground: var(--marfim);
+  --secondary: var(--marfim-claro);
+  --secondary-foreground: var(--grafite);
+  --muted: var(--marfim-claro);
+  --muted-foreground: var(--nevoa);
+  --accent: var(--latao);
+  --accent-foreground: var(--laca);
+  --destructive: #9b2c2c;
+  --border: color-mix(in oklab, var(--latao) 45%, transparent);
+  --input: var(--border);
+  --ring: var(--latao-escuro);
+  --radius: 0rem;
+}
+
+@theme inline {
+  --font-sans: var(--font-jost);
+  --font-display: var(--font-italiana);
+
+  --color-laca: var(--laca);
+  --color-latao: var(--latao);
+  --color-latao-escuro: var(--latao-escuro);
+  --color-marfim: var(--marfim);
+  --color-marfim-claro: var(--marfim-claro);
+  --color-jade: var(--jade);
+  --color-jade-escuro: var(--jade-escuro);
+  --color-grafite: var(--grafite);
+  --color-nevoa: var(--nevoa);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --radius-sm: var(--radius);
+  --radius-md: var(--radius);
+  --radius-lg: var(--radius);
+  --radius-xl: var(--radius);
+
+  /* Escala 4:3 a partir de 17px, nos nomes padrão do Tailwind para que o
+     cn (tailwind-merge) os reconheça como tamanho, não como cor. */
+  --text-sm: 0.8125rem;
+  --text-base: 1.0625rem;
+  --text-xl: 1.4167rem;
+  --text-2xl: 1.8889rem;
+  --text-4xl: 2.5185rem;
+  --text-5xl: 3.358rem;
+  --text-6xl: 4.4774rem;
+
+  --animate-trace: trace 1800ms cubic-bezier(0.65, 0, 0.35, 1) both;
+  --animate-unveil: unveil 900ms ease-out 1300ms both;
+
+  @keyframes trace {
+    from {
+      stroke-dashoffset: 1;
+    }
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+
+  @keyframes unveil {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+}
+
+/* Seções escuras: o foco passa a usar o latão claro. */
+@utility on-laca {
+  --ring: var(--latao);
+  --border: color-mix(in oklab, var(--latao) 55%, transparent);
+  background-color: var(--laca);
+  color: var(--marfim);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring;
+  }
+  html {
+    @apply scroll-smooth font-sans;
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    @apply bg-background text-base leading-[1.6] font-light text-foreground antialiased;
+  }
+  [id] {
+    scroll-margin-top: 5rem;
+  }
+  :focus-visible {
+    @apply outline-2 outline-offset-4;
+  }
+  ::selection {
+    background: var(--latao);
+    color: var(--laca);
+  }
+}
