@@ -19,14 +19,31 @@ const jost = Jost({
 
 const description = `Salão de beleza e estética no ${salon.address.place}, em Arujá. Cortes, escovas, penteados, maquiagem, unhas e estética. Agende pelo WhatsApp.`;
 
+// URL pública do site, usada para gerar links absolutos das imagens de
+// compartilhamento. Defina SITE_URL no deploy (ex.: https://seudominio.com.br);
+// na Vercel, o domínio de produção é detectado automaticamente.
+const siteUrl =
+  process.env.SITE_URL ??
+  (process.env.VERCEL_PROJECT_PRODUCTION_URL
+    ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+    : 'http://localhost:3000');
+
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
   title: `${salon.name} | Arujá – SP`,
   description,
   openGraph: {
     title: salon.name,
     description,
+    siteName: salon.name,
     locale: 'pt_BR',
     type: 'website',
+    url: '/',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: salon.name,
+    description,
   },
 };
 
