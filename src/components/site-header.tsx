@@ -69,7 +69,7 @@ export function SiteHeader() {
             showLogo ? 'opacity-100' : 'pointer-events-none opacity-0',
           )}
         >
-          <RitzLogo variant="wordmark" title="Ritz" className="w-24" />
+          <RitzLogo variant="wordmark" title="Ritz" className="w-20" />
         </a>
 
         <div className="col-start-3 flex justify-end">
